@@ -1,4 +1,5 @@
 import os
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -20,7 +21,7 @@ MODELS = {
 
 DEFAULT_GENERATION_MODEL = "openai"
 DEFAULT_EMBEDDING_MODEL = "gemini"
-EMBEDDING_MODEL_NAME = "models/embedding-001"
+EMBEDDING_MODEL_NAME = "models/gemini-embedding-001"
 
 # ChromaDB
 CHUNK_SIZE = 500
