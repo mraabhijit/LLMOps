@@ -14,12 +14,12 @@ XAI_BASE_URL = os.getenv("XAI_BASE_URL", "https://api.x.ai/v1")
 # Model configuration
 MODELS = {
     "openai": {"model_name": "gpt-4o-mini", "provider": "openai"},
-    "claude": {"model_name": "claude-3-haiku-20240307", "provider": "anthropic"},
-    "gemini": {"model_name": "gemini-2.0-flash", "provider": "google"},
-    "grok": {"model_name": "grok-2", "provider": "xai"},
+    "claude": {"model_name": "claude-3-5-sonnet-latest", "provider": "anthropic"},
+    "gemini": {"model_name": "gemini-2.5-flash-lite", "provider": "google"},
+    "grok": {"model_name": "grok-4", "provider": "xai"},
 }
 
-DEFAULT_GENERATION_MODEL = "openai"
+DEFAULT_GENERATION_MODEL = "gemini"
 DEFAULT_EMBEDDING_MODEL = "gemini"
 EMBEDDING_MODEL_NAME = "models/gemini-embedding-001"
 

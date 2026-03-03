@@ -3,7 +3,8 @@ from pathlib import Path
 from langchain_chroma.vectorstores import Chroma
 
 from config import TOP_K
-from pipeline import get_embedding_model, get_recipe_chunks
+from pipeline.embeddings import get_embedding_model
+from pipeline.ingest import get_recipe_chunks
 
 
 def create_vector_store(persist_directory: Path | str = Path("chroma_db")) -> Chroma:

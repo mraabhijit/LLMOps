@@ -1,5 +1,5 @@
-from .embeddings import get_embedding_model
-from .ingest import get_recipe_chunks
-from .retriever import get_retriever
+from .generator import create_rag_chain
 
-__all__ = ["get_embedding_model", "get_recipe_chunks", "get_retriever"]
+__all__ = [
+    "create_rag_chain",
+]
