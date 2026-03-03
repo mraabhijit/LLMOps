@@ -1,4 +1,5 @@
 from pipeline import create_rag_chain
+from tracing import get_langfuse_handler
 
 
 def main():
@@ -19,7 +20,7 @@ def main():
     print(f"\nSearching for recipes with: {ingredients_str}\n\n")
 
     query = "I have " + ingredients_str
-    print(chain.invoke(query))
+    print(chain.invoke(query, config={"callbacks": [get_langfuse_handler()]}))
 
 
 if __name__ == "__main__":
