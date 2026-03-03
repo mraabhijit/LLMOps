@@ -1,0 +1,458 @@
+[
+    {
+    "id": "001",
+    "name": "Lemon Garlic Chicken with Sauteed Spinach",
+    "cuisine": "Mediterranean",
+    "dietary": ["gluten-free", "high-protein"],
+    "allergens": [],
+    "prep_time_mins": 10,
+    "cook_time_mins": 20,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "chicken breast", "quantity": "2", "unit": "pieces"},
+      {"item": "garlic", "quantity": "4", "unit": "cloves"},
+      {"item": "olive oil", "quantity": "2", "unit": "tbsp"},
+      {"item": "lemon", "quantity": "1", "unit": "whole"},
+      {"item": "spinach", "quantity": "2", "unit": "cups"}
+    ],
+    "instructions": [
+      "Season chicken with salt, pepper, and lemon zest.",
+      "Heat olive oil in a skillet over medium-high heat.",
+      "Sear chicken 6 mins per side until golden and cooked through.",
+      "Add minced garlic, cook 1 min until fragrant.",
+      "Squeeze lemon juice over chicken, add spinach, wilt for 2 mins."
+    ],
+    "tips": "Add red pepper flakes for a spicy kick."
+  },
+  {
+    "id": "002",
+    "name": "Classic Tomato Basil Pasta",
+    "cuisine": "Italian",
+    "dietary": ["vegetarian"],
+    "allergens": ["gluten"],
+    "prep_time_mins": 5,
+    "cook_time_mins": 15,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "pasta", "quantity": "200", "unit": "grams"},
+      {"item": "tomato", "quantity": "4", "unit": "whole"},
+      {"item": "garlic", "quantity": "3", "unit": "cloves"},
+      {"item": "basil", "quantity": "10", "unit": "leaves"},
+      {"item": "olive oil", "quantity": "2", "unit": "tbsp"},
+      {"item": "parmesan", "quantity": "50", "unit": "grams"}
+    ],
+    "instructions": [
+      "Cook pasta according to package instructions.",
+      "Dice tomatoes. Heat olive oil, sauté garlic for 1 min.",
+      "Add tomatoes, cook 8 mins until softened into a sauce.",
+      "Toss drained pasta with sauce, top with torn basil and parmesan."
+    ],
+    "tips": "Use San Marzano tomatoes for the best flavor."
+  },
+  {
+    "id": "003",
+    "name": "Paneer Butter Masala",
+    "cuisine": "Indian",
+    "dietary": ["vegetarian", "gluten-free"],
+    "allergens": ["dairy"],
+    "prep_time_mins": 15,
+    "cook_time_mins": 25,
+    "servings": 4,
+    "difficulty": "medium",
+    "ingredients": [
+      {"item": "paneer cubes", "quantity": "250", "unit": "grams"},
+      {"item": "tomato puree", "quantity": "1.5", "unit": "cups"},
+      {"item": "butter", "quantity": "2", "unit": "tbsp"},
+      {"item": "heavy cream", "quantity": "3", "unit": "tbsp"},
+      {"item": "kasuri methi", "quantity": "1", "unit": "tsp"},
+      {"item": "garam masala", "quantity": "1", "unit": "tsp"}
+    ],
+    "instructions": [
+      "Melt butter in a pan and sauté tomato puree until oil separates.",
+      "Add garam masala, chili powder, and salt to taste.",
+      "Stir in cream and half a cup of water to create a smooth gravy.",
+      "Add paneer cubes and simmer for 5 minutes.",
+      "Crush kasuri methi between palms and sprinkle over the curry before serving."
+    ],
+    "tips": "Soak paneer in warm water for 10 minutes before cooking for a softer texture."
+  },
+  {
+    "id": "004",
+    "name": "Vegetable Stir-Fry with Tofu",
+    "cuisine": "Chinese",
+    "dietary": ["vegan", "high-protein"],
+    "allergens": ["soy", "sesame"],
+    "prep_time_mins": 15,
+    "cook_time_mins": 10,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "firm tofu", "quantity": "200", "unit": "grams"},
+      {"item": "broccoli florets", "quantity": "1", "unit": "cup"},
+      {"item": "soy sauce", "quantity": "2", "unit": "tbsp"},
+      {"item": "sesame oil", "quantity": "1", "unit": "tbsp"},
+      {"item": "ginger-garlic paste", "quantity": "1", "unit": "tbsp"},
+      {"item": "bell peppers", "quantity": "1", "unit": "cup"}
+    ],
+    "instructions": [
+      "Press tofu to remove water, then cut into cubes and brown in a wok with oil.",
+      "Remove tofu; add ginger-garlic paste and vegetables to the hot wok.",
+      "Stir-fry on high heat for 4 minutes until crisp-tender.",
+      "Add soy sauce and tofu back into the wok.",
+      "Toss everything together and drizzle with sesame oil."
+    ],
+    "tips": "Ensure the wok is smoking hot before adding veggies to maintain crunch."
+  },
+  {
+    "id": "005",
+    "name": "Bhetki Macher Paturi",
+    "cuisine": "Bengali",
+    "dietary": ["gluten-free", "pescatarian"],
+    "allergens": ["mustard", "fish"],
+    "prep_time_mins": 20,
+    "cook_time_mins": 15,
+    "servings": 2,
+    "difficulty": "medium",
+    "ingredients": [
+      {"item": "Bhetki fish fillets", "quantity": "2", "unit": "pieces"},
+      {"item": "mustard paste", "quantity": "3", "unit": "tbsp"},
+      {"item": "green chilies", "quantity": "4", "unit": "whole"},
+      {"item": "mustard oil", "quantity": "2", "unit": "tbsp"},
+      {"item": "banana leaves", "quantity": "2", "unit": "pieces"},
+      {"item": "turmeric powder", "quantity": "0.5", "unit": "tsp"}
+    ],
+    "instructions": [
+      "Marinate fish with mustard paste, turmeric, salt, and mustard oil for 30 mins.",
+      "Lightly singe banana leaves over a flame to make them flexible.",
+      "Place a fish fillet and one chili on a leaf, then fold into a neat parcel.",
+      "Tie with thread and steam or slow-cook on a flat griddle for 7 mins per side.",
+      "Serve hot with steamed Basmati rice."
+    ],
+    "tips": "Use a mix of yellow and black mustard seeds for a balanced pungent kick."
+  },
+  {
+    "id": "006",
+    "name": "Tawa Fish Fry",
+    "cuisine": "South Indian",
+    "dietary": ["gluten-free", "pescatarian"],
+    "allergens": ["fish"],
+    "prep_time_mins": 15,
+    "cook_time_mins": 12,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "Kingfish steaks", "quantity": "2", "unit": "pieces"},
+      {"item": "curry leaves", "quantity": "10", "unit": "leaves"},
+      {"item": "lemon juice", "quantity": "1", "unit": "tbsp"},
+      {"item": "kashmiri red chili powder", "quantity": "1", "unit": "tbsp"},
+      {"item": "coconut oil", "quantity": "2", "unit": "tbsp"}
+    ],
+    "instructions": [
+      "Make a paste of chili powder, turmeric, salt, and lemon juice.",
+      "Coat the fish steaks thoroughly and marinate for 20 minutes.",
+      "Heat coconut oil on a tawa (griddle) and add curry leaves.",
+      "Place fish on the tawa and fry for 5-6 minutes on each side until charred.",
+      "Garnish with fresh onion rings and lime wedges."
+    ],
+    "tips": "Coconut oil is essential for the authentic coastal flavor profile."
+  },
+  {
+    "id": "007",
+    "name": "Mushroom Risotto",
+    "cuisine": "Italian",
+    "dietary": ["vegetarian"],
+    "allergens": ["dairy"],
+    "prep_time_mins": 10,
+    "cook_time_mins": 30,
+    "servings": 2,
+    "difficulty": "hard",
+    "ingredients": [
+      {"item": "Arborio rice", "quantity": "1", "unit": "cup"},
+      {"item": "mixed mushrooms", "quantity": "200", "unit": "grams"},
+      {"item": "vegetable broth", "quantity": "3", "unit": "cups"},
+      {"item": "parmesan cheese", "quantity": "0.5", "unit": "cup"},
+      {"item": "onion", "quantity": "1", "unit": "small"},
+      {"item": "butter", "quantity": "1", "unit": "tbsp"}
+    ],
+    "instructions": [
+      "Sauté onions and mushrooms in butter until soft.",
+      "Add Arborio rice and toast for 2 minutes until translucent at edges.",
+      "Add warm broth one ladle at a time, stirring constantly until absorbed.",
+      "Repeat until rice is creamy and 'al dente' (about 20 minutes).",
+      "Off the heat, vigorously stir in parmesan and a knob of cold butter."
+    ],
+    "tips": "Never rinse the rice; the surface starch is what makes the risotto creamy."
+  },
+  {
+    "id": "008",
+    "name": "Hyderabadi Bagara Baingan",
+    "cuisine": "Indian",
+    "dietary": ["vegan", "gluten-free"],
+    "allergens": ["peanuts", "sesame"],
+    "prep_time_mins": 20,
+    "cook_time_mins": 25,
+    "servings": 4,
+    "difficulty": "medium",
+    "ingredients": [
+      {"item": "small eggplants", "quantity": "8", "unit": "pieces"},
+      {"item": "peanuts", "quantity": "3", "unit": "tbsp"},
+      {"item": "sesame seeds", "quantity": "2", "unit": "tbsp"},
+      {"item": "tamarind paste", "quantity": "1", "unit": "tbsp"},
+      {"item": "dry coconut", "quantity": "2", "unit": "tbsp"},
+      {"item": "ginger-garlic paste", "quantity": "1", "unit": "tbsp"}
+    ],
+    "instructions": [
+      "Dry roast peanuts, sesame, and coconut; grind into a thick, smooth paste.",
+      "Slit eggplants crosswise (keeping stems attached) and deep fry until 70% cooked.",
+      "Heat oil, add tempering spices, then sauté the ground paste and ginger-garlic.",
+      "Add tamarind juice, salt, and water to create a thick gravy.",
+      "Stuff or drop the eggplants into the gravy and simmer until tender."
+    ],
+    "tips": "Frying the eggplants before adding them to the gravy prevents them from getting mushy."
+  },
+  {
+    "id": "009",
+    "name": "Chicken Hakka Noodles",
+    "cuisine": "Chinese",
+    "dietary": ["high-protein"],
+    "allergens": ["gluten", "soy", "egg"],
+    "prep_time_mins": 15,
+    "cook_time_mins": 10,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "egg noodles", "quantity": "200", "unit": "grams"},
+      {"item": "chicken breast strips", "quantity": "150", "unit": "grams"},
+      {"item": "soy sauce", "quantity": "2", "unit": "tbsp"},
+      {"item": "vinegar", "quantity": "1", "unit": "tsp"},
+      {"item": "cabbage & carrots", "quantity": "1", "unit": "cup"},
+      {"item": "green chilies", "quantity": "2", "unit": "pieces"}
+    ],
+    "instructions": [
+      "Boil noodles 'al dente', drain, and toss with a drop of oil to prevent sticking.",
+      "Heat oil in a wok; stir-fry chicken strips on high heat until cooked.",
+      "Add shredded vegetables and chilies; toss for 2 minutes on high heat.",
+      "Add noodles, soy sauce, salt, pepper, and vinegar.",
+      "Toss vigorously for 3 minutes until well combined and slightly charred."
+    ],
+    "tips": "Use a high-smoke point oil like canola or peanut oil for the best wok hei flavor."
+  },
+  {
+    "id": "010",
+    "name": "Luchi with Alur Dom",
+    "cuisine": "Bengali",
+    "dietary": ["vegetarian"],
+    "allergens": ["gluten"],
+    "prep_time_mins": 30,
+    "cook_time_mins": 30,
+    "servings": 3,
+    "difficulty": "medium",
+    "ingredients": [
+      {"item": "maida (all-purpose flour)", "quantity": "2", "unit": "cups"},
+      {"item": "baby potatoes", "quantity": "500", "unit": "grams"},
+      {"item": "tomato", "quantity": "1", "unit": "large"},
+      {"item": "ginger paste", "quantity": "1", "unit": "tbsp"},
+      {"item": "mustard oil", "quantity": "3", "unit": "tbsp"},
+      {"item": "hing (asafoetida)", "quantity": "1", "unit": "pinch"}
+    ],
+    "instructions": [
+      "Knead flour with ghee and water into a smooth dough; rest for 20 mins.",
+      "Boil and peel baby potatoes; prick them and lightly fry in mustard oil.",
+      "Make the gravy with ginger, tomato, hing, and cumin; simmer potatoes in it.",
+      "Roll out small discs from the dough and deep fry until they puff up.",
+      "Serve the fluffy Luchis hot with the spicy potato curry."
+    ],
+    "tips": "Ensure the oil is very hot before dropping in the Luchi to ensure they puff perfectly."
+  },
+  {
+    "id": "011",
+    "name": "Classic Greek Salad (Horiatiki)",
+    "cuisine": "Mediterranean",
+    "dietary": ["vegetarian", "gluten-free", "low-carb"],
+    "allergens": ["dairy"],
+    "prep_time_mins": 10,
+    "cook_time_mins": 0,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "cucumber", "quantity": "1", "unit": "large"},
+      {"item": "tomatoes", "quantity": "3", "unit": "medium"},
+      {"item": "feta cheese", "quantity": "100", "unit": "grams"},
+      {"item": "kalamata olives", "quantity": "10", "unit": "pieces"},
+      {"item": "red onion", "quantity": "0.5", "unit": "medium"},
+      {"item": "extra virgin olive oil", "quantity": "3", "unit": "tbsp"}
+    ],
+    "instructions": [
+      "Roughly chop cucumber and tomatoes into large chunks.",
+      "Thinly slice the red onion into half-moons.",
+      "Combine vegetables and olives in a bowl.",
+      "Place a whole block of feta on top or crumble it in large pieces.",
+      "Drizzle generously with olive oil and sprinkle with dried oregano."
+    ],
+    "tips": "Authentic Greek salad never contains lettuce; use the highest quality [olive oil](https://www.greece-is.com) you can find."
+  },
+  {
+    "id": "012",
+    "name": "Ven Pongal",
+    "cuisine": "South Indian",
+    "dietary": ["vegetarian", "gluten-free"],
+    "allergens": ["dairy", "nuts"],
+    "prep_time_mins": 10,
+    "cook_time_mins": 20,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "raw rice", "quantity": "0.5", "unit": "cup"},
+      {"item": "moong dal", "quantity": "0.25", "unit": "cup"},
+      {"item": "ghee", "quantity": "2", "unit": "tbsp"},
+      {"item": "black peppercorns", "quantity": "1", "unit": "tsp"},
+      {"item": "cumin seeds", "quantity": "1", "unit": "tsp"},
+      {"item": "cashew nuts", "quantity": "5", "unit": "pieces"}
+    ],
+    "instructions": [
+      "Pressure cook rice and moong dal with 3 cups of water until very soft/mushy.",
+      "Heat ghee in a small pan; fry cashews until golden and set aside.",
+      "In the same ghee, crackle cumin, peppercorns, ginger, and curry leaves.",
+      "Pour this tempering over the cooked rice-dal mixture and mash slightly.",
+      "Mix in salt and the fried cashews before serving with coconut chutney."
+    ],
+    "tips": "Lightly roasting the moong dal before cooking enhances the nutty aroma of the dish."
+  },
+  {
+    "id": "013",
+    "name": "Prawn Malai Curry",
+    "cuisine": "Bengali",
+    "dietary": ["gluten-free", "pescatarian"],
+    "allergens": ["crustaceans"],
+    "prep_time_mins": 20,
+    "cook_time_mins": 20,
+    "servings": 3,
+    "difficulty": "medium",
+    "ingredients": [
+      {"item": "tiger prawns", "quantity": "500", "unit": "grams"},
+      {"item": "coconut milk", "quantity": "400", "unit": "ml"},
+      {"item": "mustard oil", "quantity": "2", "unit": "tbsp"},
+      {"item": "ginger paste", "quantity": "1", "unit": "tbsp"},
+      {"item": "green chilies", "quantity": "3", "unit": "pieces"},
+      {"item": "whole garam masala", "quantity": "1", "unit": "set"}
+    ],
+    "instructions": [
+      "Lightly fry the prawns with a pinch of turmeric and salt; set aside.",
+      "Heat mustard oil and temper with cardamom, cinnamon, and cloves.",
+      "Add ginger paste and sauté until the raw smell disappears.",
+      "Pour in the thick coconut milk and bring to a gentle simmer.",
+      "Add prawns and slit chilies; cook for 5 minutes until the gravy thickens."
+    ],
+    "tips": "Do not overcook the prawns, or they will become rubbery in the creamy sauce."
+  },
+  {
+    "id": "014",
+    "name": "Medhu Vada",
+    "cuisine": "South Indian",
+    "dietary": ["vegetarian", "vegan", "gluten-free"],
+    "allergens": [],
+    "prep_time_mins": 240,
+    "cook_time_mins": 20,
+    "servings": 4,
+    "difficulty": "hard",
+    "ingredients": [
+      {"item": "urad dal", "quantity": "1", "unit": "cup"},
+      {"item": "peppercorns", "quantity": "1", "unit": "tsp"},
+      {"item": "curry leaves", "quantity": "1", "unit": "sprig"},
+      {"item": "green chilies", "quantity": "2", "unit": "pieces"},
+      {"item": "oil", "quantity": "500", "unit": "ml"},
+      {"item": "ginger", "quantity": "1", "unit": "inch"}
+    ],
+    "instructions": [
+      "Soak urad dal for 4 hours; grind into a thick, fluffy paste using minimal water.",
+      "Aerate the batter by whisking vigorously until it floats in water.",
+      "Mix in chopped ginger, chilies, peppercorns, and salt.",
+      "Wet your palms, shape batter into donuts, and slide into hot oil.",
+      "Deep fry until golden brown and crispy on the outside."
+    ],
+    "tips": "The key to light vadas is incorporating air into the batter during the whisking stage."
+  },
+  {
+    "id": "015",
+    "name": "Mapo Tofu",
+    "cuisine": "Chinese",
+    "dietary": ["high-protein"],
+    "allergens": ["soy", "sesame"],
+    "prep_time_mins": 15,
+    "cook_time_mins": 15,
+    "servings": 2,
+    "difficulty": "medium",
+    "ingredients": [
+      {"item": "soft tofu", "quantity": "400", "unit": "grams"},
+      {"item": "minced chicken/pork", "quantity": "100", "unit": "grams"},
+      {"item": "doubanjiang (chili bean paste)", "quantity": "2", "unit": "tbsp"},
+      {"item": "Sichuan peppercorns", "quantity": "1", "unit": "tsp"},
+      {"item": "chicken stock", "quantity": "0.5", "unit": "cup"},
+      {"item": "cornstarch slurry", "quantity": "1", "unit": "tbsp"}
+    ],
+    "instructions": [
+      "Toast and grind Sichuan peppercorns; set aside.",
+      "Sauté minced meat in a wok until browned; add doubanjiang and stir-fry.",
+      "Pour in stock and add cubed tofu very gently to avoid breaking.",
+      "Simmer for 5 minutes, then stir in cornstarch slurry to thicken.",
+      "Top with ground peppercorns and chopped scallions."
+    ],
+    "tips": "Blanch the tofu in salted boiling water for 1 minute before using to help it hold its shape."
+  },
+  {
+    "id": "016",
+    "name": "Chicken Saltimbocca",
+    "cuisine": "Italian",
+    "dietary": ["high-protein"],
+    "allergens": ["dairy"],
+    "prep_time_mins": 15,
+    "cook_time_mins": 15,
+    "servings": 2,
+    "difficulty": "medium",
+    "ingredients": [
+      {"item": "chicken cutlets", "quantity": "4", "unit": "thin pieces"},
+      {"item": "prosciutto slices", "quantity": "4", "unit": "slices"},
+      {"item": "fresh sage", "quantity": "8", "unit": "leaves"},
+      {"item": "dry white wine", "quantity": "0.5", "unit": "cup"},
+      {"item": "butter", "quantity": "2", "unit": "tbsp"},
+      {"item": "flour", "quantity": "0.25", "unit": "cup"}
+    ],
+    "instructions": [
+      "Place a slice of prosciutto and two sage leaves on each cutlet; secure with a toothpick.",
+      "Dredge only the bottom side of the chicken in flour.",
+      "Melt butter in a skillet and sear chicken (prosciutto side down first).",
+      "Flip and cook for 2 minutes; deglaze the pan with white wine.",
+      "Reduce wine by half to create a silky sauce and serve immediately."
+    ],
+    "tips": "Use a dry Pinot Grigio or Sauvignon Blanc for the best sauce acidity."
+  },
+  {
+    "id": "017",
+    "name": "Shakshuka",
+    "cuisine": "Mediterranean",
+    "dietary": ["vegetarian", "gluten-free"],
+    "allergens": ["egg"],
+    "prep_time_mins": 10,
+    "cook_time_mins": 20,
+    "servings": 2,
+    "difficulty": "easy",
+    "ingredients": [
+      {"item": "eggs", "quantity": "4", "unit": "large"},
+      {"item": "canned tomatoes", "quantity": "400", "unit": "grams"},
+      {"item": "red bell pepper", "quantity": "1", "unit": "large"},
+      {"item": "onion", "quantity": "1", "unit": "medium"},
+      {"item": "cumin powder", "quantity": "1", "unit": "tsp"},
+      {"item": "feta cheese", "quantity": "30", "unit": "grams"}
+    ],
+    "instructions": [
+      "Sauté onions and bell peppers in a skillet until softened.",
+      "Add garlic, cumin, and paprika; pour in tomatoes and simmer for 10 minutes.",
+      "Make small wells in the sauce and crack an egg into each.",
+      "Cover and cook for 5-8 minutes until whites are set but yolks are runny.",
+      "Garnish with crumbled feta and fresh parsley."
+    ],
+    "tips": "Serve with crusty bread or pita to soak up the spiced tomato sauce and egg yolks."
+  }
+]
