@@ -1,60 +1,83 @@
-from guardrails import InputRail, OutputRail
-from pipeline import create_rag_chain
-from tracing import get_langfuse_handler
+from orchestration import RecipeGraphState, build_recipe_graph
 
 
-def main():
-    chain = create_rag_chain()
+def collect_ingredients() -> str:
+    """Collect ingredients from user via CLI input."""
     ingredients = []
     print("Welcome to Recipe Finder")
     print("=========================")
     print(
-        "Enter available ingredients, each ingredient in a new line. To exit or end, type exit or quit."
+        "Enter available ingredients, each ingredient in a new line.\n"
+        "You can also mention allergies (e.g., 'allergic to dairy').\n"
+        "Type 'quit' or 'exit' when done.\n"
     )
     while True:
         user_input = input("> ")
-        if user_input.lower() in ["exit", "quit"]:
+        if user_input.lower().strip() in ["exit", "quit"]:
             break
-        ingredients.append(user_input.lower())
+        if user_input.strip():
+            ingredients.append(user_input.lower().strip())
 
-    ingredients_str = ", ".join(ingredients)
-    query = "I have " + ingredients_str
+    if not ingredients:
+        return ""
 
-    input_rail = InputRail()
-    input_rail_output = input_rail.check_input(query)
-    print(f"\nInput Check: {'Passed' if input_rail_output['is_valid'] else 'FAILED'}")
-    if not input_rail_output["is_valid"]:
-        print("\nInput rejected:")
-        for v in input_rail_output["violations"]:
-            print(f"  - {v}")
-        return
-    if input_rail_output["detected_allergens"]:
-        allergens = ", ".join(input_rail_output["detected_allergens"])
-        print(f"  [ALLERGY NOTED] {allergens}")
+    return "I have " + ", ".join(ingredients)
 
-    print(f"\nSearching for recipes with: {ingredients_str}\n\n")
 
-    response = chain.invoke(query, config={"callbacks": [get_langfuse_handler()]})
-
-    output_rail = OutputRail()
-    output_rail_result = output_rail.check_output(
-        response, input_rail_output["detected_allergens"]
+def run_graph(query: str) -> dict:
+    """Build and invoke the LangGraph recipe pipeline."""
+    graph = build_recipe_graph()
+    state = RecipeGraphState(
+        user_input=query,
+        sanitized_input="",
+        detected_allergens=[],
+        retrieved_docs="",
+        retrieval_score="",
+        retry_count=0,
+        response="",
+        final_response="",
+        warnings=[],
+        is_safe=False,
+        blocked_reason="",
+        error="",
     )
+    return graph.invoke(state)
 
-    if not output_rail_result["is_safe"]:
-        print(f"\n[BLOCKED] {output_rail_result['blocked_reason']}")
+
+def display_result(result: dict):
+    """Format and display the graph result to the console."""
+    # Error / blocked input
+    if result["error"]:
+        print("\n[BLOCKED] Input rejected:")
+        print(f"  {result['error']}")
         return
 
-    # Print warnings first
-    if output_rail_result["warnings"]:
+    # Unsafe output
+    if not result["is_safe"]:
+        print(f"\n[BLOCKED] {result['blocked_reason']}")
+        return
+
+    # Warnings
+    if result["warnings"]:
         print("\n--- SAFETY WARNINGS ---")
-        for w in output_rail_result["warnings"]:
+        for w in result["warnings"]:
             print(f"  [WARNING] {w}")
         print("-----------------------")
 
-    # Print the response (which already has allergen banners prepended by OutputRail)
+    # Recipe
     print("\n")
-    print(output_rail_result["response"])
+    print(result["final_response"])
+
+
+def main():
+    query = collect_ingredients()
+    if not query:
+        print("No ingredients entered. Exiting.")
+        return
+
+    print("\nSearching for recipes...\n")
+    result = run_graph(query)
+    display_result(result)
 
 
 if __name__ == "__main__":
