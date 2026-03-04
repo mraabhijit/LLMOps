@@ -33,6 +33,7 @@ TOP_K = 3
 # Prompts
 DEFAULT_PROMPT_VERSION = "v1"
 PROMPTS_DIR = "./prompts"
+PROMPT_REGISTRY_NAME = "recipe-generator"
 
 # Langfuse
 LANGFUSE_SECRET_KEY = os.getenv("LANGFUSE_SECRET_KEY")
