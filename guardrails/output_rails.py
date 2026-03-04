@@ -1,4 +1,5 @@
 import re
+from dataclasses import dataclass, field
 
 KNOWN_ALLERGENS = {
     "peanuts",
@@ -55,6 +56,14 @@ REFUSAL_PHRASES = [
 ]
 
 
+@dataclass
+class OutputRailResponse:
+    is_safe: bool = False
+    blocked_reason: str = ""
+    response: str = ""
+    warnings: list[str] = field(default_factory=list)
+
+
 class OutputRail:
     def _check_refusal(self, response: str) -> bool:
         if not response:
@@ -98,22 +107,20 @@ class OutputRail:
                 found.extend(matches)
         return found
 
-    def check_output(self, response: str, user_defined_allergen: list[str]) -> dict:
+    def check_output(
+        self, response: str, user_defined_allergen: list[str]
+    ) -> OutputRailResponse:
         original_response = response
-        result = {
-            "response": original_response,
-            "warnings": [],
-            "is_safe": False,
-            "blocked_reason": "",
-        }
+        result = OutputRailResponse()
+        result.response = original_response
         if self._check_refusal(original_response):
-            result["blocked_reason"] = "Empty Response"
+            result.blocked_reason = "Empty Response"
             return result
 
-        result["is_safe"] = True
+        result.is_safe = True
         warnings = self._check_unsafe_food(original_response)
         if warnings:
-            result["warnings"].extend(warnings)
+            result.warnings.extend(warnings)
 
         known_allergens_found = self._scan_known_allergens(original_response)
         if known_allergens_found:
@@ -135,5 +142,5 @@ class OutputRail:
             )
             response = response_prepender + response
 
-        result["response"] = response
+        result.response = response
         return result

@@ -1,4 +1,5 @@
 import re
+from dataclasses import dataclass, field
 
 INGREDIENT_SET = {
     # spices "whole and ground"
@@ -146,6 +147,15 @@ class InputException(Exception):
         self.message = message
 
 
+@dataclass
+class InputRailResponse:
+    sanitized_input: str = ""
+    is_valid: bool = False
+    violations: list[str] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)
+    detected_allergens: list[str] = field(default_factory=list)
+
+
 class InputRail:
     def _check_gibberish(self, query: str) -> str | None:
         allergies = self._detect_allergies(query)
@@ -175,29 +185,24 @@ class InputRail:
             query = query.replace(k, v)
         return query
 
-    def check_input(self, query: str) -> dict:
-        result = {
-            "is_valid": False,
-            "sanitized_input": "",
-            "violations": [],
-            "warnings": [],
-            "detected_allergens": [],
-        }
+    def check_input(self, query: str) -> InputRailResponse:
+        result = InputRailResponse()
+
         gibberish = self._check_gibberish(query)
         if gibberish:
-            result["violations"].append(gibberish)
+            result.violations.append(gibberish)
         jailbreak_attempt = self._check_jailbreak(query)
         if jailbreak_attempt:
-            result["violations"].append(jailbreak_attempt)
+            result.violations.append(jailbreak_attempt)
         if gibberish or jailbreak_attempt:
             return result
 
-        result["is_valid"] = True
+        result.is_valid = True
 
         normalized_query = self._normalize(query)
-        result["sanitized_input"] = normalized_query
+        result.sanitized_input = normalized_query
 
         allergens = self._detect_allergies(query)
-        result["detected_allergens"].extend(allergens)
+        result.detected_allergens.extend(allergens)
 
         return result
