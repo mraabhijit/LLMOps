@@ -7,6 +7,7 @@ from guardrails import InputRail, InputRailResponse, OutputRail, OutputRailRespo
 from models import get_llm
 from pipeline.generator import format_docs, load_prompt
 from pipeline.retriever import get_retriever
+from tracing import get_langfuse_handler
 
 
 class RecipeGraphState(TypedDict):
@@ -62,7 +63,11 @@ def generate(state: RecipeGraphState) -> RecipeGraphState:
 
     chain = prompt | llm | parser
     state["response"] = chain.invoke(
-        {"context": state["retrieved_docs"], "question": state["sanitized_input"]}
+        {
+            "context": state["retrieved_docs"],
+            "question": state["sanitized_input"],
+        },
+        config={"callbacks": [get_langfuse_handler()]},
     )
     return state
 
