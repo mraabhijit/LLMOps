@@ -60,3 +60,6 @@ LANGUAGE_MAP = {
     "tamil": "ta-IN",
     "telugu": "te-IN",
 }
+
+# Sarvam
+SARVAM_CHUNK_SIZE = 900
