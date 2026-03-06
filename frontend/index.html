@@ -59,6 +59,22 @@
                     <!-- Logged In State (Hidden by default) -->
                     <div id="loggedInState"
                          class="hidden">
+                        <select id="languageSelect"
+                                class="lang-select">
+                            <option value="english"
+                                    selected>English</option>
+                            <option value="bengali">Bengali</option>
+                            <option value="gujarati">Gujarati</option>
+                            <option value="hindi">Hindi</option>
+                            <option value="kannada">Kannada</option>
+                            <option value="malayalam">Malayalam
+                            </option>
+                            <option value="marathi">Marathi</option>
+                            <option value="odia">Odia</option>
+                            <option value="punjabi">Punjabi</option>
+                            <option value="tamil">Tamil</option>
+                            <option value="telugu">Telugu</option>
+                        </select>
                         <span id="userEmail"
                               class="user-email">user@example.com</span>
                         <button id="logoutBtn"
@@ -81,23 +97,24 @@
             </footer>
         </div>
 
-        <!-- Simple Login Modal -->
         <div id="loginModal"
              class="modal hidden">
             <div class="modal-content">
-                <h2>Login</h2>
+                <h2 id="modalTitle">Login</h2>
                 <input type="email"
                        id="emailInput"
                        placeholder="Email"
                        value="user@example.com">
                 <input type="password"
+                       id="passwordInput"
                        placeholder="Password"
                        value="password">
                 <div class="modal-actions">
-                    <button id="submitLoginBtn"
+                    <button id="submitAuthBtn"
                             class="primary-button">Log In</button>
                     <button id="closeLoginBtn"
-                            class="text-button">Cancel</button>
+                            class="text-button"
+                            style="color:#333;">Cancel</button>
                 </div>
             </div>
         </div>
