@@ -1,36 +1,19 @@
-from typing import Optional
-
 from fastapi import FastAPI
-from pydantic import BaseModel
-
-from pipeline import run_pipeline
+from fastapi.middleware.cors import CORSMiddleware
+from routers import auth, recipe
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-class RecipeRequest(BaseModel):
-    ingredients: str
-    allergies: list[str] = []
-
-
-class RecipeResponse(BaseModel):
-    recipe: str
-    warnings: list[str] = []
-    is_safe: bool
-    error: Optional[str] = None
-
-
-@app.post("/recipe", response_model=RecipeResponse)
-def get_recipe(request: RecipeRequest):
-    response = run_pipeline(
-        english_input=request.ingredients, allergies=request.allergies
-    )
-    return RecipeResponse(
-        recipe=response["recipe"],
-        warnings=response["warnings"],
-        is_safe=response["is_safe"],
-        error=response["error"],
-    )
+app.include_router(auth.router)
+app.include_router(recipe.router)
 
 
 if __name__ == "__main__":
