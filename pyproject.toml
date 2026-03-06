@@ -18,6 +18,7 @@ dependencies = [
     "langgraph>=1.0.10",
     "nemoguardrails>=0.20.0",
     "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.22",
     "ragas>=0.4.3",
     "tiktoken>=0.12.0",
 ]

@@ -17,3 +17,6 @@ chroma_db/
 
 # Audio Test files
 audio/
+
+# Database
+*.db
