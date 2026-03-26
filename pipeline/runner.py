@@ -1,7 +1,6 @@
-from orchestration import RecipeGraphState, build_recipe_graph
-
-
 def run_pipeline(english_input: str, allergies: list[str]) -> dict:
+    from orchestration import RecipeGraphState, build_recipe_graph
+
     graph = build_recipe_graph()
     state = RecipeGraphState(
         user_input=english_input,
