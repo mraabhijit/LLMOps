@@ -40,9 +40,13 @@ def process_voice_request_stream(
 
 
 def process_text_request(text: str, language: str = "english") -> dict:
-    translated_text_in_english = vernacular_to_english(text, language)
+    is_english = language.lower() == "english"
+
+    # Skip input translation if already English
+    english_input = text if is_english else vernacular_to_english(text, language)
+
     recipe_response = run_pipeline(
-        english_input=translated_text_in_english,
+        english_input=english_input,
         allergies=[],
     )
     if recipe_response["error"]:
@@ -54,18 +58,23 @@ def process_text_request(text: str, language: str = "english") -> dict:
 
     recipe = recipe_response["recipe"]
 
-    recipe_translated_to_vernacular = english_to_vernacular(recipe, language)
+    # Skip output translation if target is English
+    output_text = recipe if is_english else english_to_vernacular(recipe, language)
     return {
-        "text": recipe_translated_to_vernacular,
+        "text": output_text,
         "is_safe": recipe_response["is_safe"],
         "warnings": recipe_response["warnings"],
     }
 
 
 def process_text_request_stream(text: str, language: str = "english") -> Iterator[dict]:
-    translated_text_in_english = vernacular_to_english(text, language)
+    is_english = language.lower() == "english"
+
+    # Skip input translation if already English
+    english_input = text if is_english else vernacular_to_english(text, language)
+
     recipe_response = run_pipeline(
-        english_input=translated_text_in_english,
+        english_input=english_input,
         allergies=[],
     )
     yield {
@@ -79,12 +88,20 @@ def process_text_request_stream(text: str, language: str = "english") -> Iterato
             "type": "response",
             "text": f"ERROR: {recipe_response['error']}",
         }
+        return
 
-    for chunk in english_to_vernacular_stream(recipe_response["recipe"], language):
+    if is_english:
+        # Stream the English recipe directly without translation
         yield {
             "type": "chunk",
-            "text": chunk,
+            "text": recipe_response["recipe"],
         }
+    else:
+        for chunk in english_to_vernacular_stream(recipe_response["recipe"], language):
+            yield {
+                "type": "chunk",
+                "text": chunk,
+            }
 
 
 if __name__ == "__main__":
