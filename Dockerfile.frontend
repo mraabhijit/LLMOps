@@ -1,0 +1,7 @@
+FROM python:3.11-slim
+
+COPY frontend/ /app/
+
+WORKDIR /app
+
+CMD ["uv", "run", "python", "-m", "http.server", "3000"]
