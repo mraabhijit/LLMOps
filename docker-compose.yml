@@ -1,0 +1,32 @@
+services:
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+     - .env
+    environment:
+     - QDRANT_URL=http://qdrant:6333
+    depends_on:
+     - qdrant
+
+  frontend:
+    image: python:3.11-slim
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3001:3000"
+    command: python -m http.server 3000
+    depends_on:
+      - backend
+
+volumes:
+  qdrant_data:

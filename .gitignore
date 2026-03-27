@@ -20,3 +20,6 @@ audio/
 
 # Database
 *.db
+
+.agents/
+docker-usage.txt
