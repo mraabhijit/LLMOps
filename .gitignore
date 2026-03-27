@@ -22,4 +22,4 @@ audio/
 *.db
 
 .agents/
-docker-usage.txt
+docs/
