@@ -49,5 +49,3 @@ def get_retriever(persist_directory: Path | str = Path("chroma_db"), name: Liter
 
 if __name__ == "__main__":
     _ = create_vector_store()
-    retriever = get_retriever()
-    print(retriever.invoke("chicken garlic lemon"))
