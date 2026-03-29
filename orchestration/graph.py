@@ -1,10 +1,8 @@
 from typing import TypedDict
 
-from langchain_core.output_parsers import StrOutputParser
 from langgraph.graph import END, START, StateGraph
 
 from guardrails import InputRail, InputRailResponse, OutputRail, OutputRailResponse
-from models import get_llm
 from pipeline.generator import format_docs, load_prompt
 from pipeline.retriever import get_retriever
 from tracing import get_langfuse_handler
@@ -37,9 +35,9 @@ def input_guard(state: RecipeGraphState) -> RecipeGraphState:
     return state
 
 
-def retrieve(state: RecipeGraphState) -> RecipeGraphState:
+async def retrieve(state: RecipeGraphState) -> RecipeGraphState:
     retriever = get_retriever()
-    docs = retriever.invoke(state["sanitized_input"])
+    docs = await retriever.ainvoke(state["sanitized_input"])
     docs_str = format_docs(docs)
     state["retrieved_docs"] = docs_str
     return state
@@ -56,19 +54,17 @@ def evaluate_retrieval(state: RecipeGraphState) -> RecipeGraphState:
     return state
 
 
-def generate(state: RecipeGraphState) -> RecipeGraphState:
+async def generate(state: RecipeGraphState) -> RecipeGraphState:
+    from pipeline import batcher
+    
     prompt = load_prompt()
-    llm = get_llm(provider="gemini")
-    parser = StrOutputParser()
 
-    chain = prompt | llm | parser
-    state["response"] = chain.invoke(
-        {
-            "context": state["retrieved_docs"],
-            "question": state["sanitized_input"],
-        },
-        config={"callbacks": [get_langfuse_handler()]},
+    rendered_prompt = template.format(
+        context=state["retrieved_docs"],
+        question=state["sanitized_input"],
     )
+
+    state["response"] = await batcher.add_request(rendered_prompt)
     return state
 
 

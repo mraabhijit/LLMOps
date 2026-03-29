@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, UploadFile, File, Form
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from pipeline import run_pipeline
+from pipeline import run_pipeline_async
 from routers.auth import get_current_user
 from sarvam import process_voice_request_stream, process_text_request_stream
 
@@ -27,8 +27,8 @@ router = APIRouter()
 
 
 @router.post("/recipe", response_model=RecipeResponse)
-def get_recipe(request: RecipeRequest, current_user: str = Depends(get_current_user)):
-    response = run_pipeline(
+async def get_recipe(request: RecipeRequest, current_user: str = Depends(get_current_user)):
+    response = await run_pipeline_async(
         english_input=request.ingredients, allergies=request.allergies
     )
     return RecipeResponse(
