@@ -7,10 +7,12 @@ spec:
     spec:
       containers:
         - name: ingest
-          image: recipe-finder:latest
+          image: recipe-finder-backend:v1
           imagePullPolicy: Never
           command: ["uv", "run", "python", "-m", "pipeline.retriever"]
           envFrom:
+            - secretRef:
+                name: app-secrets
             - configMapRef:
                 name: app-config
       restartPolicy: OnFailure

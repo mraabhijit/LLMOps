@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: recipe-finder:latest
+          image: recipe-finder-backend:v1
           imagePullPolicy: Never
           ports:
             - containerPort: 8000
@@ -26,5 +26,7 @@ spec:
               cpu: "500m"
               memory: "1Gi"
           envFrom:
+            - secretRef:
+                name: app-secrets
             - configMapRef:
                 name: app-config
