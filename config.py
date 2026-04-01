@@ -68,3 +68,6 @@ SARVAM_CHUNK_SIZE = 900
 QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
 QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION", "recipes")
 VECTOR_STORE = os.getenv("VECTOR_STORE", "Qdrant")
+
+# REDIS
+REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
