@@ -9,9 +9,13 @@ class InferenceBatcher:
         self.queue = deque()
         self.batch_size = batch_size
         self.timeout = timeout
-        asyncio.create_task(self._process_batcher())
+        self._running_task = False
 
     async def add_request(self, prompt: str):
+        if not self._running_task:
+            asyncio.create_task(self._process_batcher())
+            self._running_task = True
+
         future = asyncio.Future()
         self.queue.append((prompt, future))
         return await future
