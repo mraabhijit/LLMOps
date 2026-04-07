@@ -1,125 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, initial-scale=1.0">
-        <title>Recipe Finder</title>
-        <link rel="stylesheet"
-              href="styles.css">
-        <!-- Google Fonts for Modern Typography -->
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-              rel="stylesheet">
-    </head>
-
-    <body>
-        <div class="app-container">
-            <header class="header">
-                <div class="search-container">
-                    <div class="search-bar">
-                        <input type="text"
-                               id="ingredientInput"
-                               placeholder="Enter ingredients or use mic to speak">
-                        <button class="icon-button"
-                                id="micButton"
-                                aria-label="Microphone">
-                            <svg viewBox="0 0 24 24"
-                                 fill="none"
-                                 class="mic-icon">
-                                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round" />
-                                <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round" />
-                                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"
-                                      fill="currentColor"
-                                      fill-opacity="0.2" />
-                            </svg>
-                        </button>
-                    </div>
-                    <button id="searchButton"
-                            class="text-button">Enter</button>
-                </div>
-
-                <div class="auth-container"
-                     id="authContainer">
-                    <!-- Logged Out State -->
-                    <div id="loggedOutState">
-                        <button id="loginBtn"
-                                class="text-button">Login</button>
-                        <button id="registerBtn"
-                                class="text-button register-btn">Register</button>
-                    </div>
-                    <!-- Logged In State (Hidden by default) -->
-                    <div id="loggedInState"
-                         class="hidden">
-                        <select id="languageSelect"
-                                class="lang-select">
-                            <option value="english"
-                                    selected>English</option>
-                            <option value="bengali">Bengali</option>
-                            <option value="gujarati">Gujarati</option>
-                            <option value="hindi">Hindi</option>
-                            <option value="kannada">Kannada</option>
-                            <option value="malayalam">Malayalam
-                            </option>
-                            <option value="marathi">Marathi</option>
-                            <option value="odia">Odia</option>
-                            <option value="punjabi">Punjabi</option>
-                            <option value="tamil">Tamil</option>
-                            <option value="telugu">Telugu</option>
-                        </select>
-                        <span id="userEmail"
-                              class="user-email">user@example.com</span>
-                        <button id="logoutBtn"
-                                class="text-button text-xs">Logout</button>
-                    </div>
-                </div>
-            </header>
-
-            <main class="main-content">
-                <div class="recipe-card">
-                    <div id="recipeContent"
-                         class="recipe-content">
-                        <p class="placeholder-text">Recipe.</p>
-                    </div>
-                </div>
-            </main>
-
-            <footer class="footer">
-                <p>Recipe Finder</p>
-            </footer>
-        </div>
-
-        <div id="loginModal"
-             class="modal hidden">
-            <div class="modal-content">
-                <h2 id="modalTitle">Login</h2>
-                <input type="email"
-                       id="emailInput"
-                       placeholder="Email"
-                       value="user@example.com">
-                <input type="password"
-                       id="passwordInput"
-                       placeholder="Password"
-                       value="password">
-                <div class="modal-actions">
-                    <button id="submitAuthBtn"
-                            class="primary-button">Log In</button>
-                    <button id="closeLoginBtn"
-                            class="text-button"
-                            style="color:#333;">Cancel</button>
-                </div>
-            </div>
-        </div>
-
-        <script src="script.js"></script>
-    </body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
