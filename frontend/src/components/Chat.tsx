@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ChatQuery from "./ChatQuery";
 import ChatHistory from "./ChatHistory";
+import useAuth from "../hooks/useAuth";
+import { getRecipe } from "../api/chat";
 
 
 export interface Message {
@@ -9,19 +11,36 @@ export interface Message {
     role: string;
 }
 
-function Chat() {
+export function Chat() {
+    const { token } = useAuth();
     const [ history, setHistory] = useState<Message[]>([
-        { id: 1, content: "What is today's weather in Sydney?", role: "user"},
-        { id: 2, content: "Sydney today is blazing at 45 degree Celsius.", role: "system"}
+        { id: Date.now(), content: "Welcome to Recipe Finder! Tell me the ingredients you have and I will help you with a quick and delicious recipe! ", role: "system"},
     ]);
 
-    const addMessage = (content: string, role: string) => {
+    const addMessage = async (content: string, role: string) => {
+        if (!content.trim()) return;
+        
+        // Add user message to history
         const newMessage: Message = {
             id: Date.now(),
             content,
             role
         };
         setHistory(prev => [ ...prev, newMessage ]);
+        
+        const res = await getRecipe({
+            ingredients: content,
+            allergies: [],
+            language: "english",
+        }, token!);
+    
+        // Add system response to history
+        const response: Message = {
+            id: Date.now(),
+            content: res.recipe || res.error || "Sorry! Unable to fetch requested resource",
+            role: "system",
+        };
+        setHistory(prev => [ ...prev, response ]);
     }
 
     return (

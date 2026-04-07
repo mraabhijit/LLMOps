@@ -1,4 +1,5 @@
 import type {Message} from './Chat';
+import ReactMarkdown from 'react-markdown';
 
 interface ChatHistoryProps {
     history: Message[];
@@ -8,9 +9,9 @@ function ChatHistory({ history }: ChatHistoryProps) {
     return (
         <div className="chat-history-container">
             {history.map((m) => (
-                (m.role === "user")
-                ? <p key={m.id} className="message user-message">{m.content}</p>
-                : <p key={m.id} className="message system-message">{m.content}</p>
+                <div key={m.id} className={`message ${m.role === "user" ? "user-message" : "system-message"}`}>
+                    <ReactMarkdown>{m.content}</ReactMarkdown>
+                </div>
             ))}
         </div>
     );

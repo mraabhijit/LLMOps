@@ -1,15 +1,26 @@
 import './App.css'
 // import Header from './components/Header'
 import Chat from './components/Chat'
+import useAuth from './hooks/useAuth'
+import AuthButtons from './components/AuthButtons';
+import { AuthProvider } from './context/AuthContext';
 
-function App() {
-  
+function AppContent() {
+  const {token} = useAuth();
 
   return (
-    <>
-      {/* <Header /> */}
-      <Chat />
-    </>
+    <div>
+      <AuthButtons />
+      {token && <Chat />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </ AuthProvider>
   )
 }
 
