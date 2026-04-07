@@ -26,7 +26,7 @@ class RecipeResponse(BaseModel):
 router = APIRouter()
 
 
-@router.post("/recipe", response_model=RecipeResponse)
+@router.post("/recipe/batch/text", response_model=RecipeResponse)
 async def get_recipe(request: RecipeRequest, current_user: str = Depends(get_current_user)):
     response = await run_pipeline_async(
         english_input=request.ingredients, allergies=request.allergies
@@ -39,7 +39,7 @@ async def get_recipe(request: RecipeRequest, current_user: str = Depends(get_cur
     )
 
 
-@router.post("/recipe/voice")
+@router.post("/recipe/stream/voice")
 def get_recipe_from_voice(
     audio: UploadFile = File(...),
     language: str = Form("english"),
@@ -49,17 +49,17 @@ def get_recipe_from_voice(
 
     def generator():
         for chunk in process_voice_request_stream(audio_bytes, language):
-            yield f"data: {json.dumps(chunk)}\n\n"
+            yield f"data: {chunk}\n\n"
 
     return StreamingResponse(generator(), media_type="text/event-stream")
 
 
-@router.post("/recipe/text")
+@router.post("/recipe/stream/text")
 def get_recipe_from_text(
     request: RecipeRequest, current_user: str = Depends(get_current_user)
 ):
     def generator():
         for chunk in process_text_request_stream(request.ingredients, request.language):
-            yield f"data: {json.dumps(chunk)}\n\n"
+            yield f"data: {chunk}\n\n"
 
     return StreamingResponse(generator(), media_type="text/event-stream")
