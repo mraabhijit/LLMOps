@@ -59,7 +59,7 @@ async def generate(state: RecipeGraphState) -> RecipeGraphState:
     
     prompt = load_prompt()
 
-    rendered_prompt = template.format(
+    rendered_prompt = prompt.format(
         context=state["retrieved_docs"],
         question=state["sanitized_input"],
     )
